@@ -1,0 +1,1 @@
+# nuxt-notion-api-integration
