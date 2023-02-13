@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
      * - client_id
      */
     const redirect_uri = 'http://localhost:3000'
-    const client_secret = 'secret_WDMoFs38RMqd3p1YcvGZppX1FUXGGNnWoP8rEyEQ62P'
-    const client_id = '2eb07026-b80c-4096-8b91-23fa33d21fdb'
+    const client_secret = '[INSERT YOUR CLIENT SECRET HERE]'
+    const client_id = '[INSERT YOUR CLIENT ID HERE]'
 
     //base64 encoded client id and client secret
     const base64EncodedAuthentication = btoa(`${client_id}:${client_secret}`)
