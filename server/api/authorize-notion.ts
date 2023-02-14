@@ -1,5 +1,6 @@
 let result = null
 export default defineEventHandler(async (event) => {
+    const config = useRuntimeConfig()
     const query = getQuery(event)
 
     if (!query.code) {
@@ -14,9 +15,9 @@ export default defineEventHandler(async (event) => {
      * - client_secret
      * - client_id
      */
-    const redirect_uri = 'http://localhost:3000'
-    const client_secret = '[INSERT YOUR CLIENT SECRET HERE]'
-    const client_id = '[INSERT YOUR CLIENT ID HERE]'
+    const redirect_uri = config.REDIRECT_URI
+    const client_secret = config.CLIENT_SECRET
+    const client_id = config.CLIENT_ID
 
     //base64 encoded client id and client secret
     const base64EncodedAuthentication = btoa(`${client_id}:${client_secret}`)

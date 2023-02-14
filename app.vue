@@ -25,11 +25,13 @@
 import { ref } from 'vue'
 
 const route = useRoute()
+const config = useRuntimeConfig()
 
 // you can get this url from the notion integration for authorization
 // you need the client id, redirect_uri which can be set in the integration settings
-const authorizationUrl =
-    'https://api.notion.com/v1/oauth/authorize?client_id=2eb07026-b80c-4096-8b91-23fa33d21fdb&response_type=code&owner=user&redirect_uri=http%3A%2F%2Flocalhost%3A3000'
+const authorizationUrl = `https://api.notion.com/v1/oauth/authorize?client_id=${
+    config.CLIENT_ID
+}&response_type=code&owner=user&redirect_uri=${encodeURI(config.REDIRECT_URI)}`
 
 const authorization_code = ref(null)
 const authConnected = ref(false)
